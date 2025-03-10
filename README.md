@@ -1,69 +1,69 @@
-# Welcome to your Lovable project
 
-## Project info
+# Aidify Flutter App
 
-**URL**: https://lovable.dev/projects/0ffdf9e0-40dc-44e7-b72d-c9a0e2ab2f6c
+A Flutter application that provides accessibility features including speech-to-text, text-to-speech, translation, and object detection.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- Speech to Text: Convert spoken words to written text
+- Text to Speech: Convert written text to spoken words
+- Translation: Translate text between multiple languages
+- Object Detection: Identify objects using your camera
 
-**Use Lovable**
+## Getting Started
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/0ffdf9e0-40dc-44e7-b72d-c9a0e2ab2f6c) and start prompting.
+### Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Flutter SDK (version 2.17.0 or higher)
+- Dart SDK (version 2.17.0 or higher)
+- Android Studio / Xcode for mobile development
 
-**Use your preferred IDE**
+### Installation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Clone this repository
+   ```
+   git clone https://github.com/yourusername/aidify-flutter.git
+   ```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Navigate to the project directory
+   ```
+   cd aidify-flutter
+   ```
 
-Follow these steps:
+3. Install dependencies
+   ```
+   flutter pub get
+   ```
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+4. Run the app
+   ```
+   flutter run
+   ```
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Project Structure
 
-# Step 3: Install the necessary dependencies.
-npm i
+- `lib/` - Contains all the Dart code for the application
+  - `main.dart` - Entry point of the application
+  - `routes.dart` - App navigation routes
+  - `components/` - Reusable UI components
+  - `screens/` - App screens
+  - `theme/` - App theme configuration
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Dependencies
 
-**Edit a file directly in GitHub**
+- google_fonts - For custom fonts
+- provider - For state management
+- flutter_tts - For text-to-speech functionality
+- speech_to_text - For speech recognition
+- translator - For language translation
+- camera - For object detection
+- flutter_sound - For audio recording and playback
+- permission_handler - For handling device permissions
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Future Improvements
 
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/0ffdf9e0-40dc-44e7-b72d-c9a0e2ab2f6c) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+- Add user authentication and profile management
+- Implement cloud storage for saved transcriptions
+- Add more languages for translation
+- Improve object detection accuracy
+- Add offline mode functionality
