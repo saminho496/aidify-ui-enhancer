@@ -1,25 +1,33 @@
-import { useLocation } from "react-router-dom";
-import { useEffect } from "react";
+
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 const NotFound = () => {
-  const location = useLocation();
-
-  useEffect(() => {
-    console.error(
-      "404 Error: User attempted to access non-existent route:",
-      location.pathname
-    );
-  }, [location.pathname]);
-
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
-      </div>
+    <div className="min-h-screen flex items-center justify-center p-4 bg-gradient-to-b from-background to-muted/30">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="text-center"
+      >
+        <div className="mb-6 w-20 h-20 mx-auto rounded-2xl bg-aidify-blue/10 flex items-center justify-center">
+          <span className="text-aidify-blue text-4xl font-bold">404</span>
+        </div>
+        
+        <h1 className="text-3xl font-bold mb-3">Page Not Found</h1>
+        
+        <p className="text-muted-foreground mb-6 max-w-md">
+          We couldn't find the page you were looking for. The page might have been moved or doesn't exist.
+        </p>
+        
+        <Link to="/">
+          <Button size="lg" className="bg-gradient-to-r from-aidify-blue to-aidify-purple">
+            Return to Home
+          </Button>
+        </Link>
+      </motion.div>
     </div>
   );
 };
