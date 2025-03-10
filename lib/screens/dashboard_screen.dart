@@ -21,6 +21,10 @@ class DashboardScreen extends StatelessWidget {
           ],
         ),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () => Navigator.pushNamed(context, '/settings'),
+          ),
           PopupMenuButton(
             icon: const CircleAvatar(
               backgroundImage: NetworkImage('https://github.com/shadcn.png'),
@@ -71,6 +75,8 @@ class DashboardScreen extends StatelessWidget {
             onSelected: (value) {
               if (value == 'logout') {
                 Navigator.pushReplacementNamed(context, '/');
+              } else if (value == 'settings') {
+                Navigator.pushNamed(context, '/settings');
               }
             },
           ),
@@ -140,6 +146,24 @@ class DashboardScreen extends StatelessWidget {
                       Navigator.pushNamed(context, '/object-detection');
                     },
                   ),
+                  FeatureCard(
+                    title: 'Color Detection',
+                    description: 'Identify colors using your camera for the visually impaired.',
+                    icon: Icons.colorize,
+                    color: Colors.purple,
+                    onTap: () {
+                      Navigator.pushNamed(context, '/color-detection');
+                    },
+                  ),
+                  FeatureCard(
+                    title: 'OCR',
+                    description: 'Extract text from images and documents.',
+                    icon: Icons.document_scanner,
+                    color: Colors.green,
+                    onTap: () {
+                      Navigator.pushNamed(context, '/ocr');
+                    },
+                  ),
                 ],
               ),
               
@@ -189,6 +213,14 @@ class DashboardScreen extends StatelessWidget {
                       time: 'Yesterday, 10:20 AM',
                       icon: Icons.record_voice_over,
                       color: AppTheme.primaryBlue,
+                    ),
+                    const Divider(),
+                    _buildActivityItem(
+                      context,
+                      title: 'Scanned document with OCR',
+                      time: '2 days ago, 3:45 PM',
+                      icon: Icons.document_scanner,
+                      color: Colors.green,
                     ),
                   ],
                 ),
