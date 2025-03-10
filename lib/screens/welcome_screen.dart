@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:aidify/theme/app_theme.dart';
+import 'package:aidify/components/feature_card.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({Key? key}) : super(key: key);
@@ -141,30 +142,34 @@ class WelcomeScreen extends StatelessWidget {
                         mainAxisSpacing: 16,
                         shrinkWrap: true,
                         physics: const NeverScrollableScrollPhysics(),
-                        children: const [
+                        children: [
                           FeatureCard(
                             title: 'Text to Speech',
                             description: 'Convert written text into spoken words',
                             icon: Icons.message_rounded,
                             color: AppTheme.primaryBlue,
+                            onTap: () => Navigator.pushNamed(context, '/text-to-speech'),
                           ),
                           FeatureCard(
                             title: 'Speech to Text',
                             description: 'Accurately transcribe spoken words',
                             icon: Icons.mic,
                             color: AppTheme.primaryPurple,
+                            onTap: () => Navigator.pushNamed(context, '/speech-to-text'),
                           ),
                           FeatureCard(
                             title: 'Translation',
                             description: 'Translate text between languages',
                             icon: Icons.translate,
                             color: AppTheme.accentCyan,
+                            onTap: () => Navigator.pushNamed(context, '/translation'),
                           ),
                           FeatureCard(
                             title: 'Object Detection',
                             description: 'Identify objects using your camera',
                             icon: Icons.visibility,
                             color: AppTheme.accentCoral,
+                            onTap: () => Navigator.pushNamed(context, '/object-detection'),
                           ),
                         ],
                       ),
@@ -196,72 +201,6 @@ class WelcomeScreen extends StatelessWidget {
             ),
           ],
         ),
-      ),
-    );
-  }
-}
-
-class FeatureCard extends StatelessWidget {
-  final String title;
-  final String description;
-  final IconData icon;
-  final Color color;
-
-  const FeatureCard({
-    Key? key,
-    required this.title,
-    required this.description,
-    required this.icon,
-    required this.color,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(16),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.black.withOpacity(0.05),
-            blurRadius: 10,
-            offset: const Offset(0, 4),
-          ),
-        ],
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            padding: const EdgeInsets.all(8),
-            decoration: BoxDecoration(
-              color: color.withOpacity(0.1),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Icon(
-              icon,
-              color: color,
-              size: 24,
-            ),
-          ),
-          const SizedBox(height: 16),
-          Text(
-            title,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 16,
-            ),
-          ),
-          const SizedBox(height: 8),
-          Text(
-            description,
-            style: TextStyle(
-              color: AppTheme.textSecondary,
-              fontSize: 14,
-            ),
-          ),
-        ],
       ),
     );
   }

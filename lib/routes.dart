@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:aidify/screens/splash_screen.dart';
 import 'package:aidify/screens/welcome_screen.dart';
